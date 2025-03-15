@@ -1,29 +1,29 @@
 // 1
-// const keys = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
-// let currentKeyIndex = Math.floor(Math.random() * keys.length);
-// const keyElement = document.getElementById("key");
-// const messageElement = document.getElementById("message");
-// const newGameButton = document.getElementById("newGame");
-// function setNewKey() {
-//   currentKeyIndex = Math.floor(Math.random() * keys.length);
-//   keyElement.textContent = keys[currentKeyIndex];
-// }
-// document.addEventListener("keydown", (event) => {
-//   if (event.key === keys[currentKeyIndex]) {
-//     setNewKey();
-//     PNotify.success({ text: "Правильно! Натисніть наступну клавішу." });
-//   } else {
-//     PNotify.error({ text: "Помилка! Натисніть правильну клавішу." });
-//   }
-// });
-// document.addEventListener("keypress", (event) => {
-//   event.preventDefault();
-// });
-// newGameButton.addEventListener("click", () => {
-//   setNewKey();
-//   PNotify.info({ text: "Гра оновлена! Натисніть правильну клавішу." });
-// });
-// setNewKey();
+const keys = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
+let currentKeyIndex = Math.floor(Math.random() * keys.length);
+const keyElement = document.getElementById("key");
+const messageElement = document.getElementById("message");
+const newGameButton = document.getElementById("newGame");
+function setNewKey() {
+  currentKeyIndex = Math.floor(Math.random() * keys.length);
+  keyElement.textContent = keys[currentKeyIndex];
+}
+document.addEventListener("keydown", (event) => {
+  if (event.key === keys[currentKeyIndex]) {
+    setNewKey();
+    PNotify.success({ text: "Правильно! Натисніть наступну клавішу." });
+  } else {
+    PNotify.error({ text: "Помилка! Натисніть правильну клавішу." });
+  }
+});
+document.addEventListener("keypress", (event) => {
+  event.preventDefault();
+});
+newGameButton.addEventListener("click", () => {
+  setNewKey();
+  PNotify.info({ text: "Гра оновлена! Натисніть правильну клавішу." });
+});
+setNewKey();
 
 // 2
 const ctx = document.getElementById("sales-chart").getContext("2d");
@@ -70,3 +70,4 @@ const config = {
 };
 new Chart(ctx, config);
 
+console.log(typeof PNotify);
